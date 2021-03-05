@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title>Family Book</title>
+    </head>
+    <body>
+
+        <h1>Family Book</h1>
+        <img src="familybook.jpg" id="bookpic">
+        <h3 id="person">Family Book</h3>
+        <button id="prevbtn" onclick="prev()">Back</button>
+        <button id="nextbtn" onclick="next()">Next</button>
+
+        <script>
+            var name_of_member = ["Mallikarjuna Kandlagunta", "Pushpalatha Kandlagunta", "Manojna Kandlagunta", "Dhanush Kandlagunta"]
+            var image = ["VIMG_6845 (1).jpg", "IMG_7187.jpg", "VIMG_7628.jpg", "VIMG_7461.jpg"];
+            var i=-1
+            function next(){
+                i++;
+                if(i == 4){
+                    i=0;
+                };
+                document.getElementById("bookpic").src = image[i];
+                document.getElementById("person").innerHTML = name_of_member[i];
+            }
+            function prev(){
+                i--;
+                if(i<0){
+                    i=3;
+                };
+                document.getElementById("bookpic").src = image[i];
+                document.getElementById("person").innerHTML = name_of_member[i];
+            }
+
+        </script>
+
+    </body>
+
+    
+</html>
